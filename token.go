@@ -70,16 +70,7 @@ func (j JWT) Validate(token string) (interface{}, error) {
  
 	return claims["dat"], nil
 }
-package key
 
-import (
-	"crypto/rand"
-	"crypto/rsa"
-	"crypto/x509"
-	"encoding/pem"
-	"errors"
-	"fmt"
-)
 
 func GenerateRsaKeyPair() (*rsa.PrivateKey, *rsa.PublicKey) {
 	privkey, _ := rsa.GenerateKey(rand.Reader, 4096)
